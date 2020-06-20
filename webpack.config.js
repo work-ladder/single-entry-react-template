@@ -19,14 +19,11 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
-        /* 
-          也可以这样写，这种方式方便写一些配置参数
-          use: [
-              {loader: 'style-loader'},
-              {loader: 'css-loader'}
-          ]
-        */
+        use: ExtractTextWebpackPlugin.extract({
+          // 将css用link的方式引入就不再需要style-loader了
+          fallback: "style-loader",
+          use: ['css-loader']
+        })
       }
     ]
   }
