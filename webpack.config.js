@@ -54,8 +54,13 @@ module.exports = {
         }]
       },
       {
-        test: /.\js$/,
-        use: "babel-loader",
+        test: /\.js$/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets:['@babel/preset-env']
+          }
+        },
         include: /src/,
         exclude: /node_modules/
       }

@@ -1,15 +1,14 @@
 {
   "presets": [
-    [
-      "@babel/preset-env",
-      {
-        "corejs": "2",
-        "useBuiltIns": "usage",
-        "targets": {
-          "browsers": ["last 2 versions", "ie >= 10"]
-        }
+    "@babel/preset-react",
+    ["@babel/preset-env", {
+      "useBuiltIns": "entry",
+      "corejs": 3,
+      "modules": "auto",
+      "targets": {
+        "browsers": ["last 2 versions", "ie >= 10"]
       }
-    ]
+    }]
   ],
   "plugins": [
     [
