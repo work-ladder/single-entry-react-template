@@ -60,5 +60,14 @@ module.exports = {
         exclude: /node_modules/
       }
     ],
+  },
+  resolve: {
+    // 别名
+    alias: {
+      pages:path.join(__dirname,'src/pages'),
+      component:path.join(__dirname,'src/component'),
+    },
+    // 省略后缀
+    extensions: ['.js', '.jsx', '.json', '.css', '.scss', '.less']
   }
 }
