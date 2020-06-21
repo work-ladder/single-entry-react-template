@@ -2,12 +2,10 @@
   "presets": [
     "@babel/preset-react",
     ["@babel/preset-env", {
-      "useBuiltIns": "entry",
+      "useBuiltIns": "usage",
       "corejs": 3,
-      "modules": "auto",
-      "targets": {
-        "browsers": ["last 2 versions", "ie >= 10"]
-      }
+      "modules": false,
+      "targets": "> 5%"
     }]
   ],
   "plugins": [
