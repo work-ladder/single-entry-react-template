@@ -22,7 +22,7 @@ document.body.appendChild(scriptDOM)
             let resultHTML = htmlPluginData.html.replace(
               "<!--MyPlugin inset script-->", result
             );
-// 返回修改后的结果
+            // 返回修改后的结果
             htmlPluginData.html = "<script>console.log('my-plugin')</script>";
           }
         );

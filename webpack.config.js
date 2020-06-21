@@ -17,7 +17,7 @@ module.exports = {
       hash: true, // 在打包好的bundle.js 后加上hash
       inject: true,
     }),
-    new MyPlugin({ options: true }),
+    new MyPlugin(),
     new CleanWebpackPlugin(),
     new ExtractTextWebpackPlugin('css/style.css'),
   ],
