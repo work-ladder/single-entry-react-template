@@ -1,17 +1,25 @@
 {
-	"presets": [
-		[
-			"env",
-			{
-				"loose": true,
-				"modules": false
-			}
-		],
-		"es2015",
-		"react",
-		"babel-preset-stage-3"
-	],
-	"plugins": [
-		"transform-runtime"
-	]
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "corejs": "2",
+        "useBuiltIns": "usage",
+        "targets": {
+          "browsers": ["last 2 versions", "ie >= 10"]
+        }
+      }
+    ]
+  ],
+  "plugins": [
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "corejs": 2,
+        "helpers": true,
+        "regenerator": true,
+        "useESModules": false
+      }
+    ]
+  ]
 }

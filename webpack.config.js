@@ -1,7 +1,7 @@
 const path = require("path")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const ExtractTextWebpackPlugin = require("extract-text-webpack-plugin")
-const CleanWebpackPlugin = require('clean-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -10,7 +10,8 @@ module.exports = {
     path: path.resolve('dist')
   },
   plugins: [
-    new CleanWebpackPlugin('dist'),
+    new CleanWebpackPlugin(),
+    new ExtractTextWebpackPlugin('css/style.css'),
     new HtmlWebpackPlugin({
       template: './src/index.html', // 模板路径
       hash: true // 在打包好的bundle.js 后加上hash
