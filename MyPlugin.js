@@ -11,8 +11,17 @@ class MyPlugin {
         compilation.plugin(
           "html-webpack-plugin-before-html-processing",
           (htmlPluginData, callback) => {
+            let result = `
+              <script>
+                    (${this.options})()
+              </script>
+            `;
+            let resultHTML = htmlPluginData.html.replace(
+              "<!--MyPlugin inset script-->", result
+            );
             // 返回修改后的结果
-            htmlPluginData.html = `<script>(${this.options})() </script>`;
+            htmlPluginData.html = resultHTML;
+            // 返回修改后的结果
           }
         );
       }

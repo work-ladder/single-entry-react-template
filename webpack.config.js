@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -11,6 +12,14 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve('dist'),
   },
+  devServer: {
+    port: 9009,
+    open: true, // 自动打开浏览器
+    contentBase: './dist', // todo: 告诉服务器从哪里dist目录中提供内容
+    hot: true, // 只更新修改的部分，而不是刷新整个页面
+    // hotOnly:true
+    // publicPath: '/dist',
+  },
   devtool: 'inline-source-map',
   plugins: [
     new HtmlWebpackPlugin({
@@ -21,6 +30,7 @@ module.exports = {
     new MyPlugin(doSomething.toString()),
     new CleanWebpackPlugin(),
     new ExtractTextWebpackPlugin('css/style.css'),
+    new webpack.HotModuleReplacementPlugin(),
   ],
   module: {
     rules: [
