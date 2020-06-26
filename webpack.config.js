@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const doSomething = require('./custom-script');
 const MyPlugin = require('./MyPlugin');
 
 module.exports = {
@@ -17,7 +18,7 @@ module.exports = {
       hash: true, // 在打包好的bundle.js 后加上hash
       inject: true,
     }),
-    new MyPlugin(),
+    new MyPlugin(doSomething.toString()),
     new CleanWebpackPlugin(),
     new ExtractTextWebpackPlugin('css/style.css'),
   ],
