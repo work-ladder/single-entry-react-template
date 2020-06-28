@@ -7,7 +7,7 @@ if (module.hot) {
   // 实现热更新
   module.hot.accept();
 }
-const a = <div>123</div>;
+const a = <div>nm$l</div>;
 ReactDOM.render(
   a,
   document.getElementById('app'),

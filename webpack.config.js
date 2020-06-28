@@ -20,7 +20,7 @@ module.exports = {
     // hotOnly:true
     // publicPath: '/dist',
   },
-  devtool: 'inline-source-map',
+  devtool: 'source-map',
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html', // 模板路径
@@ -32,6 +32,11 @@ module.exports = {
     new ExtractTextWebpackPlugin('css/style.css'),
     new webpack.HotModuleReplacementPlugin(),
   ],
+  // 注册loader
+  resolveLoader: {
+    // loader查找顺序，从左到右
+    modules: ['node_modules', './'],
+  },
   module: {
     rules: [
       {
@@ -70,12 +75,12 @@ module.exports = {
       },
       {
         test: /\.js?x$/,
-        use: {
+        use: ['MyLoader', {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env'],
           },
-        },
+        }],
         include: /src/,
         exclude: /node_modules/,
       },

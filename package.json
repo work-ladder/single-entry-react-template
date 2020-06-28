@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "dependencies": {
     "eslint-plugin-promise": "^4.2.1",
+    "loader-utils": "^2.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
