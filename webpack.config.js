@@ -75,7 +75,12 @@ module.exports = {
       },
       {
         test: /\.js?x$/,
-        use: ['MyLoader', {
+        use: [{
+          loader: 'MyLoader',
+          options: {
+            name: '河蟹',
+          },
+        }, {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env'],
