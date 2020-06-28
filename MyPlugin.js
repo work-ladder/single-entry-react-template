@@ -22,6 +22,7 @@ class MyPlugin {
             // 返回修改后的结果
             htmlPluginData.html = resultHTML;
             // 返回修改后的结果
+            callback()
           }
         );
       }

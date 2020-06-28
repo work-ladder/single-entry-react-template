@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyRightPlugin = require('./MyPlugin1');
 const doSomething = require('./custom-script');
 const MyPlugin = require('./MyPlugin');
 
@@ -31,6 +32,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new ExtractTextWebpackPlugin('css/style.css'),
     new webpack.HotModuleReplacementPlugin(),
+    new CopyRightPlugin(),
   ],
   // 注册loader
   resolveLoader: {
