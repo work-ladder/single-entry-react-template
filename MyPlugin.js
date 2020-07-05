@@ -6,7 +6,7 @@ class MyPlugin {
   }
   apply(compiler) {
     compiler.hooks.compilation.tap('SetScriptTimestampPlugin',
-      (compilation, callback) => {
+      (compilation) => {
         // 插件逻辑 调用compilation提供的plugin方法
         compilation.plugin(
           "html-webpack-plugin-before-html-processing",
@@ -22,7 +22,6 @@ class MyPlugin {
             // 返回修改后的结果
             htmlPluginData.html = resultHTML;
             // 返回修改后的结果
-            callback()
           }
         );
       }
