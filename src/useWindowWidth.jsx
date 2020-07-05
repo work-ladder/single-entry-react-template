@@ -13,7 +13,7 @@ export default function useWindowWidth() {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, [width]);
+  }, [width]); // width: 只有在width 变化才执行
 
   return width;
 }
