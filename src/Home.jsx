@@ -2,6 +2,8 @@ import React, { useState, useRef } from 'react';
 import width from './useWindowWidth';
 import UseCallbackComponent from './component/useCallback';
 import UseReducerComponent from './component/useReducer';
+import UseContextComponent from './component/UseContext';
+
 // let countTemp = 0;
 export default function Home() {
   const [count, setCount] = useState(0);
@@ -32,10 +34,16 @@ export default function Home() {
       </button>
 
       <br />
+      <h3>UseCallbackComponent</h3>
       <UseCallbackComponent />
 
       <br />
+      <h3>UseReducerComponent</h3>
       <UseReducerComponent />
+
+      <br />
+      <h3>UseContextComponent</h3>
+      <UseContextComponent />
     </div>
   );
 }
