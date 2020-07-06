@@ -3,6 +3,7 @@ import width from './useWindowWidth';
 import UseCallbackComponent from './component/useCallback';
 import UseReducerComponent from './component/useReducer';
 import UseContextComponent from './component/UseContext';
+import SimpleRedux from "./component/simple-redux/app";
 
 // let countTemp = 0;
 export default function Home() {
@@ -44,6 +45,8 @@ export default function Home() {
       <br />
       <h3>UseContextComponent</h3>
       <UseContextComponent />
+
+      <SimpleRedux />
     </div>
   );
 }
