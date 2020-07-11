@@ -4,6 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "dependencies": {
+    "axios": "^0.19.2",
     "eslint-plugin-promise": "^4.2.1",
     "loader-utils": "^2.0.0",
     "react": "^16.13.1",

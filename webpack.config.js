@@ -20,6 +20,14 @@ module.exports = {
     hot: true, // 只更新修改的部分，而不是刷新整个页面
     // hotOnly:true
     // publicPath: '/dist',
+    proxy: {
+      '/api': {
+        target: 'https://mock.gem-mine.tech/', // 目标服务器 host
+        pathRewrite: { '^/api': '' }, // 重写请求，比如我们源访问的是api/old-path，那么请求会被解析为/api/new-path
+        // changeOrigin: true, // 这个参数可以让target参数是域名。设置为true, 本地就会虚拟一个服务器接收你的请求并代你发送该请求,
+        secure: false, // 不检查安全问题。设置后，可以接受运行在 HTTPS 上，可以使用无效证书的后端服务器
+      },
+    },
   },
   devtool: 'source-map',
   plugins: [

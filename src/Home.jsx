@@ -2,8 +2,9 @@ import React, { useState, useRef } from 'react';
 import width from './useWindowWidth';
 import UseCallbackComponent from './component/useCallback';
 import UseReducerComponent from './component/useReducer';
-import UseContextComponent from './component/UseContext';
-import SimpleRedux from "./component/simple-redux/app";
+import UseContextComponent from './component/useContext';
+import SimpleRedux from './component/simple-redux/app';
+import GetList from './api/getList';
 
 // let countTemp = 0;
 export default function Home() {
@@ -46,7 +47,13 @@ export default function Home() {
       <h3>UseContextComponent</h3>
       <UseContextComponent />
 
+      <br />
+      <h3>SimpleRedux</h3>
       <SimpleRedux />
+
+      <br />
+      <h3>api 获取列表</h3>
+      <GetList />
     </div>
   );
 }
