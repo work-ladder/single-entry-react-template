@@ -1,7 +1,7 @@
 {
   "name": "webpack4-react-explore",
   "version": "1.0.0",
-  "description": "",
+  "description": "<%=description%>",
   "main": "dist/index.js",
   "dependencies": {
     "axios": "^0.19.2",
@@ -50,7 +50,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode=development",
-    "dev": "webpack-dev-server "
+    "dev": "wlc dev"
   },
   "author": "",
   "license": "ISC"
